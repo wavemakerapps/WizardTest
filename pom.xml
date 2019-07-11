@@ -13,7 +13,35 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/BlobTest/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/hrdb/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/randomuser/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/testDemo2/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -145,7 +173,11 @@
                         </goals>
                         <configuration>
                             <sources>
+                                <source>services/BlobTest/src</source>
+                                <source>services/hrdb/src</source>
+                                <source>services/randomuser/src</source>
                                 <source>services/securityService/src</source>
+                                <source>services/testDemo2/src</source>
                             </sources>
                         </configuration>
                     </execution>
@@ -361,6 +393,16 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -393,12 +435,12 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.version>5.1.4.RELEASE</spring.version>
         <spring.security.version>5.0.8.RELEASE</spring.security.version>
-        <wavemaker.studio.version>10.0.3</wavemaker.studio.version>
+        <wavemaker.studio.version>10.0.4</wavemaker.studio.version>
         <wavemaker.artifactType>wmapp</wavemaker.artifactType>
         <wavemaker.artifactStaticFolder>wmapp</wavemaker.artifactStaticFolder>
         <wavemaker.artifacts.single.excludes>wmapp/,pages/,themes/,index.html,app.css,app.js,app.variables.json</wavemaker.artifacts.single.excludes>
         <wavemaker.artifacts.separate.excludes>wmapp/,pages/,themes/,index.html,app.css,app.js,print.css,app.variables.json,favicon.png
         </wavemaker.artifacts.separate.excludes>
-        <wavemaker.studio.release.version>10.0.3</wavemaker.studio.release.version>
+        <wavemaker.studio.release.version>10.0.4</wavemaker.studio.release.version>
     </properties>
 </project>

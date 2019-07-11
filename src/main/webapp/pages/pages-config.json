@@ -1,4 +1,12 @@
 [ {
+  "name" : "ApplyLeave",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ApplyLeave2",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
   "params" : [ ]
@@ -15,6 +23,10 @@
   "type" : "FOOTER",
   "params" : [ ]
 }, {
+  "name" : "getRestData",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "header",
   "type" : "HEADER",
   "params" : [ ]
@@ -25,6 +37,10 @@
 }, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "testExport",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "topnav",

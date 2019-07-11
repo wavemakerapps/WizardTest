@@ -3,7 +3,45 @@
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <wm-livefilter name="EmployeeFilter1" title="Filter Employee" dataset="bind:Variables.HrdbEmployeeData.dataSet" captionalign="left" captionposition="top" autoupdate="true">
+                <wm-layoutgrid columns="1" name="layoutgrid4">
+                    <wm-gridrow name="gridrow12">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn23">
+                            <wm-filter-field name="firstname" field="firstname" displayname="Firstname" widget="select" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" key="firstname" matchmode="startignorecase" placeholder="Select value"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow13">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn24">
+                            <wm-filter-field name="city" field="city" displayname="City" widget="text" is-range="false" type="string" is-primary-key="false" generator="assigned" show="true" inputtype="text" key="city" placeholder="Enter value" matchmode="startignorecase"></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-livefilter>
+            <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="List1" dataset="bind:Widgets.EmployeeFilter1.result" navigation="Pager">
+                <wm-listtemplate layout="media" name="listtemplate2">
+                    <wm-card name="card2">
+                        <wm-card-content fontsize="0.8" fontunit="em" name="card_content2">
+                            <wm-layoutgrid columns="2" name="layoutgrid5">
+                                <wm-gridrow name="gridrow14">
+                                    <wm-gridcolumn colwidth="6" columnwidth="6" class="col-xs-6" name="gridcolumn25">
+                                        <wm-picture name="Picture" width="100%" picturesource="bind:Widgets.EmployeeFilter1.result.picurl"></wm-picture>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn colwidth="6" columnwidth="6" padding="unset 1.25em" class="col-xs-6" name="gridcolumn26">
+                                        <wm-label name="ID" caption="bind:Widgets.EmployeeFilter1.result.empId" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                        <wm-label name="Name" caption="bind:Widgets.EmployeeFilter1.result.firstname" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
+                                        <wm-label name="JobTitle" caption="bind:Widgets.EmployeeFilter1.result.jobTitle" class="h5" margin="0px unset unset unset" whitespace="nowrap"></wm-label>
+                                        <wm-label name="Department" caption="Department" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                        <wm-label name="Location" caption="Location" class="text-muted p" whitespace="nowrap"></wm-label>
+                                        <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
+                                        <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap"></wm-anchor>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-card-content>
+                    </wm-card>
+                </wm-listtemplate>
+            </wm-list>
         </wm-page-content>
         <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>

@@ -1,0 +1,31 @@
+{
+  "endpointAddress" : "https://api.randomuser.me/",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "X-Powered-By" : [ "Express" ],
+      "CF-RAY" : [ "4f498f583a26cef0-IAD" ],
+      "Server" : [ "cloudflare" ],
+      "Set-Cookie" : [ "__cfduid=d9ec4f22814e7a597639440fa340571541562835342; expires=Fri, 10-Jul-20 08:55:42 GMT; path=/; domain=.randomuser.me; HttpOnly" ],
+      "Date" : [ "Thu, 11 Jul 2019 08:55:42 GMT" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Content-Type" : [ "application/json; charset=utf-8" ],
+      "ETag" : [ "W/\"48c-uDFUeIYCOjMI8GQmOxFULQ\"" ],
+      "Connection" : [ "keep-alive" ],
+      "Expect-CT" : [ "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"" ],
+      "Cache-Control" : [ "no-cache" ],
+      "Vary" : [ "Accept-Encoding" ]
+    },
+    "responseBody" : "{\"results\":[{\"gender\":\"female\",\"name\":{\"title\":\"ms\",\"first\":\"نازنین\",\"last\":\"نجاتی\"},\"location\":{\"street\":\"4802 وحدت اسلامی\",\"city\":\"نیشابور\",\"state\":\"لرستان\",\"postcode\":54985,\"coordinates\":{\"latitude\":\"35.1544\",\"longitude\":\"78.1950\"},\"timezone\":{\"offset\":\"-4:00\",\"description\":\"Atlantic Time (Canada), Caracas, La Paz\"}},\"email\":\"نازنین.نجاتی@example.com\",\"login\":{\"uuid\":\"bbc47dc9-75f9-44d4-bcb1-3ec0fb4e4d38\",\"username\":\"beautifulelephant928\",\"password\":\"pumpkin\",\"salt\":\"t9JrZrTV\",\"md5\":\"3c8473478a8e9a73b5a13f3e06776f33\",\"sha1\":\"f13c2ecbe2b9b4c7cfef23e32856a07ed5f0b5f6\",\"sha256\":\"4e3f057594b10087e15557bf121a6f1f50aabd924a452471c05bce9a650d8303\"},\"dob\":{\"date\":\"1985-11-14T11:47:20Z\",\"age\":33},\"registered\":{\"date\":\"2002-04-10T18:11:19Z\",\"age\":17},\"phone\":\"072-82825842\",\"cell\":\"0946-636-4682\",\"id\":{\"name\":\"\",\"value\":null},\"picture\":{\"large\":\"https://randomuser.me/api/portraits/women/96.jpg\",\"medium\":\"https://randomuser.me/api/portraits/med/women/96.jpg\",\"thumbnail\":\"https://randomuser.me/api/portraits/thumb/women/96.jpg\"},\"nat\":\"IR\"}],\"info\":{\"seed\":\"f73397de995a96da\",\"results\":1,\"page\":1,\"version\":\"1.2\"}}",
+    "convertedResponse" : null
+  }
+}

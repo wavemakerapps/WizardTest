@@ -1,0 +1,19 @@
+{
+  "modelName" : "testDemo2",
+  "entityName" : "Employee",
+  "tableName" : "Employee",
+  "unamePropertyName" : "username",
+  "unameColumnName" : "Username",
+  "uidPropertyName" : "empId",
+  "uidColumnName" : "EmpID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "Password",
+  "rolePropertyName" : "role",
+  "roleColumnName" : "Role",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "HQL"
+}

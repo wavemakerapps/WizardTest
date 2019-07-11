@@ -1,0 +1,60 @@
+<wm-page pagetitle="Get Rest Data" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livetable formlayout="dialog" name="UserLiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="UserTable1" title="User List" dataset="bind:Variables.BlobTestUserData.dataSet" navigation="Basic">
+                    <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="name" caption="Name" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="city" caption="City" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="image" caption="Image" widget-type="image" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false">
+                        <wm-picture picturesource="bind:row.getProperty('image')" hint="bind:row.getProperty('image')" class="" conditionalclass=""></wm-picture>
+                    </wm-table-column>
+                    <wm-table-column binding="role" caption="Role" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="salary" caption="Salary" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="Variables.randomuser.invoke();addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="User Info" formlayout="dialog" iconclass="wi wi-edit" name="UserLiveForm1" dataset="bind:Variables.BlobTestUserData.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="1" name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                                <wm-form-field name="name" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"
+                                    defaultvalue="bind:Variables.randomuser.dataSet.results[$i].name.first + ' ' + Variables.randomuser.dataSet.results[$i].name.last"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                                <wm-form-field name="city" displayname="City" show="true" primary-key="false" generator="assigned" key="city" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"
+                                    defaultvalue="bind:Variables.randomuser.dataSet.results[$i].location.city"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                                <wm-form-field name="image" displayname="Image" show="true" primary-key="false" generator="assigned" key="image" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"
+                                    defaultvalue="bind:Variables.randomuser.dataSet.results[$i].picture.large"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                                <wm-form-field name="role" displayname="Role" show="true" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                                <wm-form-field name="salary" displayname="Salary" show="true" primary-key="false" generator="assigned" key="salary" type="string" widget="currency" currency="INR"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                    <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>
