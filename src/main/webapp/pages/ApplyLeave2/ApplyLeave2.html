@@ -4,6 +4,7 @@
     <wm-content name="content1">
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="10" name="page_content1">
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="button1Click($event, widget)"></wm-button>
             <wm-livetable formlayout="dialog" name="EmployeeLiveTable1">
                 <wm-table gridfirstrowselect="true" editmode="dialog" name="EmployeeTable1" title="Employee List" dataset="bind:Variables.TestDemo2EmployeeData.dataSet" navigation="Pager">
                     <wm-table-column binding="name" caption="Name" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
@@ -50,6 +51,7 @@
                     <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
                 </wm-liveform>
             </wm-livetable>
+            <wm-html name="html1"><button type="submit" onclick="">Button</button></wm-html>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>

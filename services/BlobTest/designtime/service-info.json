@@ -1,6 +1,0 @@
-{
-  "id" : "BlobTest",
-  "type" : "DataService",
-  "packageNames" : [ "com.wizardtest.blobtest" ],
-  "title" : "BlobTest"
-}

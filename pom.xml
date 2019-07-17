@@ -13,14 +13,14 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/BlobTest/src</directory>
+                <directory>services/MyJavaService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/hrdb/src</directory>
+                <directory>services/RNDPP/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -35,13 +35,6 @@
             <resource>
                 <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>true</filtering>
-                <directory>services/testDemo2/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -173,11 +166,10 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>services/BlobTest/src</source>
-                                <source>services/hrdb/src</source>
+                                <source>services/MyJavaService/src</source>
+                                <source>services/RNDPP/src</source>
                                 <source>services/randomuser/src</source>
                                 <source>services/securityService/src</source>
-                                <source>services/testDemo2/src</source>
                             </sources>
                         </configuration>
                     </execution>

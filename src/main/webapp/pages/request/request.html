@@ -1,0 +1,80 @@
+<wm-page pagetitle="Request" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-livefilter name="RequestMainFilter1" title="Filter Requests" dataset="bind:Variables.RNDPPRequestMainData.dataSet" captionalign="left" captionposition="top" autoupdate="true" collapsible="true" expanded="false">
+                <wm-layoutgrid columns="2" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                            <wm-filter-field name="requestId" field="requestId" displayname="Request" widget="autocomplete" is-range="false" type="integer" is-primary-key="true" generator="identity" show="true" key="requestId" placeholder="Search Request ID"
+                                datacompletemsg="No more requests to load" loadingdatamsg="Loading requests..."></wm-filter-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                            <wm-filter-field name="employee" field="employee" displayname="Employee" widget="autocomplete" lookup-type="Employee" lookup-field="empName" is-related="true" related-entity-name="Employee" is-range="false" type="integer" is-primary-key="false"
+                                generator="assigned" show="true" key="employee" matchmode="startignorecase" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                                placeholder="Search Employee" datacompletemsg="No more employees to load" loadingdatamsg="Loading employees..."></wm-filter-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-filter-action key="filter" display-name="Filter" show="true" class="btn-primary" iconclass="wi wi-filter-list" title="Filter" action="filter()" disabled="false" widget-type="button" type="button"></wm-filter-action>
+                <wm-filter-action key="clear" display-name="Clear" show="true" class="btn-secondary" iconclass="wi wi-trash" title="Clear" action="clearFilter()" disabled="false" widget-type="button" type="button"></wm-filter-action>
+            </wm-livefilter>
+            <wm-table name="Table1" title="" dataset="bind:Widgets.RequestMainFilter1.result" navigation="Pager">
+                <wm-table-column binding="requestId" caption="Request ID" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="requestDate" caption="Date" edit-widget-type="datetime" type="datetime" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="employee.empName" caption="Employee" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="groupMaster.segmentMaster.segmentName" caption="Segment" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="groupMaster.sectorMaster.sectorName" caption="Sector" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="siteMaster.siteName" caption="Site" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-action key="customButton" display-name="New Request" show="true" class="btn-primary" iconclass="" title="New Request" action="Widgets.requestmainDialog.open()" shortcutkey="" disabled="false" widget-type="button"
+                    position="header"></wm-table-action>
+            </wm-table>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" name="requestmainDialog" title="RequestMain Info" iconclass="wi wi-edit" modal="true">
+        <wm-liveform errormessage="" title="" defaultmode="Edit" dataset="bind:Variables.RNDPPRequestMainData.dataSet" captionalign="left" captionposition="top" name="RequestMainLiveForm1" on-success="Widgets.requestmainDialog.close()">
+            <wm-layoutgrid columns="2" name="layoutgrid2">
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-form-field name="requestDate" displayname="Request Date" show="true" primary-key="false" generator="assigned" key="requestDate" type="datetime" readonly="false" required="false" widget="datetime" datepattern="MMM d, yyyy h:mm:ss a"
+                            placeholder="Select date time" outputformat="yyyy-MM-ddTHH:mm:ss"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4">
+                        <wm-form-field name="employee" displayname="Employee" show="true" primary-key="false" generator="assigned" key="employee" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value" filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="empName"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                        <wm-form-field name="groupMaster" displayname="Group Master" show="true" primary-key="false" generator="assigned" key="groupMaster" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value"
+                            filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="groupName"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                        <wm-form-field name="sectorMaster" displayname="Sector Master" show="true" primary-key="false" generator="assigned" key="sectorMaster" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value"
+                            filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="sectorName"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                        <wm-form-field name="segmentMaster" displayname="Segment Master" show="true" primary-key="false" generator="assigned" key="segmentMaster" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value"
+                            filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="segmentName"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                        <wm-form-field name="siteMaster" displayname="Site Master" show="true" primary-key="false" generator="assigned" key="siteMaster" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value"
+                            filterexpressions="{&quot;condition&quot;:&quot;AND&quot;,&quot;rules&quot;:[{&quot;target&quot;:&quot;&quot;,&quot;type&quot;:&quot;string&quot;,&quot;matchMode&quot;:&quot;anywhereignorecase&quot;,&quot;value&quot;:&quot;&quot;,&quot;required&quot;:false}]}"
+                            displayexpression="siteName"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="requestId" displayname="Request Id" show="false" primary-key="true" generator="identity" key="requestId" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-dialog>
+</wm-page>

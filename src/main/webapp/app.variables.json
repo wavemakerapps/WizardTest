@@ -56,6 +56,17 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "goToPage_request" : {
+    "_id" : "wm-goToPage_request-wm.NavigationVariable-1563186155068",
+    "name" : "goToPage_request",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "request",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_testExport" : {
     "_id" : "wm-goToPage_testExport-wm.NavigationVariable-1562742257725",
     "name" : "goToPage_testExport",

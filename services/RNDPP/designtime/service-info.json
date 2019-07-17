@@ -1,0 +1,6 @@
+{
+  "id" : "RNDPP",
+  "type" : "DataService",
+  "packageNames" : [ "com.wizardtest.rndpp" ],
+  "title" : "RNDPP"
+}
